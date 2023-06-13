@@ -36,3 +36,10 @@ if __name__ == "__main__":
         pygame.image.load('').convert_alpha(),
         pygame.image.load('').convert_alpha(),
     )
+
+    GAMES_SPRITES['message'] = pygame.image.load('').convert_alpha()
+    GAMES_SPRITES['base'] = pygame.image.load('').convert_alpha()
+    GAMES_SPRITES['pipe'] = pygame.image.load('').convert_alpha()
+
+    pygame.image.load('').convert_alpha()
+    pygame.image.load('').convert_alpha()
