@@ -50,3 +50,33 @@ if __name__ == "__main__":
     GAMES_SOUNDS['point'] = pygame.mixer.Sound('')
     GAMES_SOUNDS['swoosh'] = pygame.mixer.Sound('')
     GAMES_SOUNDS['wing'] = pygame.mixer.Sound('')
+
+def welcomeScreen():
+    """Shows Welcome Screen"""
+    playerx = int(SCREENWIDTH/5)
+    playery = int(SCREENHEIGHT- GAMES_SPRITES['player'].get_height())/2
+    messagex = int(SCREENHEIGHT- GAMES_SPRITES['message'].get_width())/2
+    messagey = int(SCREENHEIGHT*0.13)
+    basex = 0
+    while True:
+        for event in pygame.event.get():
+            if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+                pygame.quit()
+                sys.exit()
+
+            elif event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_UP):
+                return
+            
+            else:
+                SCREEN.blit(GAMES_SPRITES['background'], (0, 0))
+                SCREEN.blit(GAMES_SPRITES['player'], (playerx, playery))
+                SCREEN.blit(GAMES_SPRITES['message'], (messagex, messagey))
+                SCREEN.blit(GAMES_SPRITES['base'], (basex, GROUNDY))
+                pygame.display.update()
+                FPSCLOCK.tick(FPS)
+
+
+
+    while True:
+        welcomeScreen()
+        mainGame() #This is the main game function
