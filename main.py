@@ -41,5 +41,5 @@ if __name__ == "__main__":
     GAMES_SPRITES['base'] = pygame.image.load('').convert_alpha()
     GAMES_SPRITES['pipe'] = pygame.image.load('').convert_alpha()
 
-    pygame.image.load('').convert_alpha()
-    pygame.image.load('').convert_alpha()
+    pygame.transform.rotate(pygame.image.load(PIPE).convert_alpha(),180)
+    pygame.image.load(PIPE).convert_alpha()
